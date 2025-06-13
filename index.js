@@ -1,10 +1,12 @@
 const express = require("express");
 const app = express();
 const data = require("./data.js");
+const cors = require("cors");
 
+app.use(cors());
 app.get("/", (req, res) => {
   console.log("the data is ", data);
-  res.json( data);
+  res.json(data);
 });
 
 app.listen(3000, (err) => {
